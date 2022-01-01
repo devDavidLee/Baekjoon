@@ -1,3 +1,5 @@
+package src_step;
+
 public class No_15596 {
     long sum(int[] a){
         long sum = 0;

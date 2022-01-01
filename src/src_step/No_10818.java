@@ -1,3 +1,5 @@
+package src_step;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

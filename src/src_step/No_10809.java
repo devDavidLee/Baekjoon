@@ -1,3 +1,5 @@
+package src_step;
+
 import java.util.Scanner;
 
 public class No_10809 {
