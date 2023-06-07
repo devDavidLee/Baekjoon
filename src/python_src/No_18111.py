@@ -78,7 +78,7 @@ for i in range(257):
                 max += (size[j][k]-i)
                 #print("max:",max)
         box = max + B
-        #print("box:",box,"min:",min)
+        print("box:",box,"min:",min)
     if box<min:
         continue
     new_time=2*max+min
