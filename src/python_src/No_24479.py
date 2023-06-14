@@ -8,18 +8,29 @@ def dfs (graph, node, visited):
             dfs(graph, i, visited)
 
 N, M, R = map(int, input().split())
-graph = [[]*N]
+graph_dic = {}
+for i in range(N):
+    a,b = map(int, input().split())
+    graph_dic[a]=b
+    graph_dic[b]=a
 
+print("dic:",graph_dic)
 
-graph = [
-    [],
-    [2, 4],
-    [1, 3, 4],
-    [2, 4],
-    [1, 2, 3],
-    [],
-]
+for i in range(1,N+1):
+    if not (i in graph_dic):
+        print(i,": X")
+    else:
+        print(i,":",graph_dic[i])
 
-visited = [False] * 5
+# graph = [
+#     [],
+#     [2, 4],
+#     [1, 3, 4],
+#     [2, 4],
+#     [1, 2, 3],
+#     [],
+# ]
 
-dfs(graph, 1, visited)
+# visited = [False] * 5
+
+# dfs(graph, 1, visited)
