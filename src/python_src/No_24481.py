@@ -1,15 +1,14 @@
 import sys
 sys.setrecursionlimit(10 ** 5) 
 
-def dfs(graph, start, visited, save=[]):
+def dfs(graph, start, visited, save):
     # visited.append(start)
-    save.append(start)
+    save[start]+=1
     visited[start]=1
     for node in graph[start]:
         if visited[node]==0:
-            
             #print("dfs(node:",node,")",end="\n")
-            dfs(graph, node, visited)
+            dfs(graph, node, visited,save)
     return save,visited
 
 N, M, R = map(int, input().split())
@@ -20,6 +19,7 @@ for i in range(1,N+1):
 
 
 visited = [0 for _ in range(N+1)]
+save = [-1 for _ in range(N+1)]
 
 for i in range(1,M+1):
     a,b = map(int, input().split())
@@ -37,15 +37,12 @@ for i in range(1,M+1):
 for i in range(1,N+1):
     graph[i].sort()
 
-result=dfs(graph,R,visited)
+result=dfs(graph,R,visited,save)
 
-for i in range(1,N+1):
-    if result[1][i]==1:
-        print(result[0].index(i)+1)
-    else:
-        print(0)
+print(result)
 
-
-
-# print(graph)
-# print(dfs(graph,1))
+# for i in range(1,N+1):
+#     if result[1][i]==1:
+#         print(result[0].index(i)+1)
+#     else:
+#         print(0)

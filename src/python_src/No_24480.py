@@ -27,15 +27,8 @@ for i in range(1,M+1):
     graph[b].append(a)
 
 
-# graph[1] = [2,4]
-# graph[2] = [1,3,4]
-# graph[3] = [2,4]
-# graph[4] = [1,2,3]
-# graph[5] = []
-
-
 for i in range(1,N+1):
-    graph[i].sort()
+    graph[i].sort(reverse=True)
 
 result=dfs(graph,R,visited)
 
@@ -44,8 +37,3 @@ for i in range(1,N+1):
         print(result[0].index(i)+1)
     else:
         print(0)
-
-
-
-# print(graph)
-# print(dfs(graph,1))
