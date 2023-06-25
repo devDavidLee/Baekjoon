@@ -35,7 +35,7 @@ for i in range(1,M+1):
 
 
 for i in range(1,N+1):
-    graph[i].sort()
+    graph[i].sort(reverse=True)
 
 result=dfs(graph,R,visited, save)
 
